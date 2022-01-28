@@ -60,3 +60,30 @@ www.testapi -> base url
             if.........
             
             
+`Model Serializer Class`
+    - no need to write model fields
+    - all are same as Serializer class
+    - create/update functions are implemented by default
+    Class Meta: (indicate Model class)
+        model = model name
+        fields = ["", ""]/ __all__
+        exclude=[" "]
+        read_only_fields  = [" "]
+        extra_kwargs = {"field": {"read_only": True}}
+        
+        
+`Function Based API`
+    -@api_view() (decorators)
+    -@api_view(['GET', ....]) 
+    -from rest-framework.decorators import api_view
+    
+    * request.data-> return the parsed content of the request body. This is similiar to the standard request.POST and request.FILES
+    * request.query.params-> same as request.GET/ good to use request.query.params
+    * headers = application/json
+    
+`Class Based API View`
+    -from rest-framework.decorators import APIView
+    - Class StudentAPI(APIView):
+        def ........ all are same as function based view
+        
+
