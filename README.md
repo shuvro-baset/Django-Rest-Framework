@@ -100,5 +100,14 @@ www.testapi -> base url
         - get_queryset(self)
         - get_object(self)
         - get_serializer_class(self)
-        
-        
+        - get_serializer_context(self)
+        - get_serializer(self, instance=None, data=None, many=False, partial=False)
+        - get_paginated_response(self, data)
+        - paginate_queryset(self, queryset)
+        - filter_queryset(self, queryset)
+    #Mixins
+        - ListModelMixin(list method, listing queryset)
+        - CreateModelMixin(create method, creating and saving a new model instance)
+        - RetrieveModelMixin(retrieve method, existing model instance)
+        - UpdateModelMixin(update method, updating and saving an existing model instance)
+        - DestroyModelMixin(destroy method, deletion) 
