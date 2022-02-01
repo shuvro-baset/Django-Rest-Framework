@@ -110,4 +110,17 @@ www.testapi -> base url
         - CreateModelMixin(create method, creating and saving a new model instance)
         - RetrieveModelMixin(retrieve method, existing model instance)
         - UpdateModelMixin(update method, updating and saving an existing model instance)
-        - DestroyModelMixin(destroy method, deletion) 
+        - DestroyModelMixin(destroy method, deletion)
+
+`Concrete View Class`
+    * Extends: Generic and Mixins inherits
+    - ListAPIView
+    - CreateAPIView
+    - RetrieveAPIView
+    - UpdateAPIView
+    - DestroyAPIView
+    - ListCreateAPIView
+    - RetrieveUpdateAPIView
+    - RetrieveDestroyAPIView
+    - RetrieveUpdateDestroyAPIView
+    
