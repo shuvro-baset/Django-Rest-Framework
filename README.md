@@ -87,3 +87,18 @@ www.testapi -> base url
         def ........ all are same as function based view
         
 
+`Generic View`
+    - This class extends REST Frameworks APIView class, adding commonly required behavior for standard list and detail views.
+    #Attributes
+        - queryset 
+        - serializer_class
+        - lookup_field
+        - lookup_url_kwarg
+        - pagination_class
+        - filter_backends
+    #Methods
+        - get_queryset(self)
+        - get_object(self)
+        - get_serializer_class(self)
+        
+        
