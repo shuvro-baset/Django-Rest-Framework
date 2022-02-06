@@ -127,4 +127,10 @@ www.testapi -> base url
 `ViewSet Class`
    - combine relative views in a single class
    - provide actions(create, update, delete, list, retrieve, partial_update) instead of methods(post, get)
-    
+  
+  
+`ModelViewSet Class`
+   - inherits from GenericAPIView includes implementations for various actions, by mixing in the behavoiur of the various mixin class. 
+   
+`Authentication & Permission`
+   - permissions(AllowAny, isAuthenticate, isAdminUser, )
