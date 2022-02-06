@@ -124,6 +124,7 @@ www.testapi -> base url
     - RetrieveDestroyAPIView
     - RetrieveUpdateDestroyAPIView
     
-`ViewSet`
-   - 
+`ViewSet Class`
+   - combine relative views in a single class
+   - provide actions(create, update, delete, list, retrieve, partial_update) instead of methods(post, get)
     
