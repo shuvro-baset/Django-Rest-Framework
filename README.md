@@ -124,3 +124,6 @@ www.testapi -> base url
     - RetrieveDestroyAPIView
     - RetrieveUpdateDestroyAPIView
     
+`ViewSet`
+   - 
+    
