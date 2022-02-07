@@ -157,3 +157,9 @@ www.testapi -> base url
    - JSON Web Token
    - Doesn't need to use database for validation.
    - pip install djangorestframework-simplejwt .........
+
+`Throtlling`
+   - Throttling is similiar to permission, temporary state that are control the rate of request that client can make to an API.
+`Filter`
+   - django-filter
+   - DjangoFilterBackend
