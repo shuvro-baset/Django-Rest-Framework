@@ -139,3 +139,12 @@ www.testapi -> base url
    - import BasePermission and make a different file and create your custom permission functionality
    - has_permission, has_object_permission
    - return true/false
+
+`Token Authentication`
+   - settings.py -> installed_app -> 'rest_framework.authtoken'
+   - migrate
+   * generate token: 
+      - using admin application
+      - command (python manage.py drf_create_token <username>)
+      - exposing api endpoint
+      - using signals
