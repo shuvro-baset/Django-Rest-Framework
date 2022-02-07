@@ -133,4 +133,9 @@ www.testapi -> base url
    - inherits from GenericAPIView includes implementations for various actions, by mixing in the behavoiur of the various mixin class. 
    
 `Authentication & Permission`
-   - permissions(AllowAny, isAuthenticate, isAdminUser, )
+   - permissions(AllowAny, isAuthenticate, isAdminUser, DjangoModelPermission)
+
+`Custom Permission`
+   - import BasePermission and make a different file and create your custom permission functionality
+   - has_permission, has_object_permission
+   - return true/false
