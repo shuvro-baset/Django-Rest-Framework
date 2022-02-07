@@ -163,3 +163,18 @@ www.testapi -> base url
 `Filter`
    - django-filter
    - DjangoFilterBackend
+   - searchFilter
+   - ordering filter
+   
+`Pagination`
+   - declare pagination class in settings.py for global setting for pagination page number..... 
+   - page_size, page_query_param, page_size_query_param, max_page_size, last_page_string
+   
+`LimitOffSetPagination`
+   - some extra params for more features in pagination
+   - limit(number of records), offset(where to start),
+   
+`CursorPagination` 
+   - created field needed for CursorPagination
+   - next/previous option
+   
