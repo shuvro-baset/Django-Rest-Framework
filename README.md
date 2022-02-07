@@ -148,3 +148,12 @@ www.testapi -> base url
       - command (python manage.py drf_create_token <username>)
       - exposing api endpoint
       - using signals
+   
+   
+`Authentication`
+   - Django oAuth Toolkit, Json Web Token, Hawk HTTP authentication, HTTP signature, Djoser, django-rest-auth, dj-rest-auth, django-rest-framework-social-auth2, django-rest-knox, drfpasswordless
+   
+`JWT Token`
+   - JSON Web Token
+   - Doesn't need to use database for validation.
+   - pip install djangorestframework-simplejwt .........
