@@ -124,3 +124,57 @@ www.testapi -> base url
     - RetrieveDestroyAPIView
     - RetrieveUpdateDestroyAPIView
     
+`ViewSet Class`
+   - combine relative views in a single class
+   - provide actions(create, update, delete, list, retrieve, partial_update) instead of methods(post, get)
+  
+  
+`ModelViewSet Class`
+   - inherits from GenericAPIView includes implementations for various actions, by mixing in the behavoiur of the various mixin class. 
+   
+`Authentication & Permission`
+   - permissions(AllowAny, isAuthenticate, isAdminUser, DjangoModelPermission)
+
+`Custom Permission`
+   - import BasePermission and make a different file and create your custom permission functionality
+   - has_permission, has_object_permission
+   - return true/false
+
+`Token Authentication`
+   - settings.py -> installed_app -> 'rest_framework.authtoken'
+   - migrate
+   * generate token: 
+      - using admin application
+      - command (python manage.py drf_create_token <username>)
+      - exposing api endpoint
+      - using signals
+   
+   
+`Authentication`
+   - Django oAuth Toolkit, Json Web Token, Hawk HTTP authentication, HTTP signature, Djoser, django-rest-auth, dj-rest-auth, django-rest-framework-social-auth2, django-rest-knox, drfpasswordless
+   
+`JWT Token`
+   - JSON Web Token
+   - Doesn't need to use database for validation.
+   - pip install djangorestframework-simplejwt .........
+
+`Throtlling`
+   - Throttling is similiar to permission, temporary state that are control the rate of request that client can make to an API.
+`Filter`
+   - django-filter
+   - DjangoFilterBackend
+   - searchFilter
+   - ordering filter
+   
+`Pagination`
+   - declare pagination class in settings.py for global setting for pagination page number..... 
+   - page_size, page_query_param, page_size_query_param, max_page_size, last_page_string
+   
+`LimitOffSetPagination`
+   - some extra params for more features in pagination
+   - limit(number of records), offset(where to start),
+   
+`CursorPagination` 
+   - created field needed for CursorPagination
+   - next/previous option
+   
