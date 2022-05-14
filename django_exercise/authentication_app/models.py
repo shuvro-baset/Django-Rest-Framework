@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User as AuthUser
 from rest_framework.authtoken.models import Token
-
 from core.models import BaseModel
 
 
@@ -15,6 +14,7 @@ class User(AuthUser, BaseModel):
             "id": self.id,
             "first_name": self.first_name,
             "last_name": self.last_name,
+            "username": self.first_name + self.last_name,
             "email": self.username,
             "token": token.key
         }
@@ -34,8 +34,3 @@ class User(AuthUser, BaseModel):
     @classmethod
     def validate_unique_email(cls, email):
         return True if cls.objects.filter(username=email).exists() else False
-
-
-class Message(BaseModel):
-    message = models.TextField()
-    create_by = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -1,9 +1,8 @@
 from django.db import models
-
-# Create your models here.
+from authentication_app.models import User
 from core.models import BaseModel
 
 
-# class Message(BaseModel):
-#     message = models.TextField()
-#     created_by = models.ForeignKey()
+class Message(BaseModel):
+    message = models.TextField()
+    create_by = models.ForeignKey(User, on_delete=models.CASCADE)
