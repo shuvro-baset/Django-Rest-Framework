@@ -84,6 +84,14 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
+    # make user restriction for /api/messages/ url . quota of 10 messages per hour per user
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.ScopedRateThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'anon': '50/day',
+        'message_app': '10/hour'
+    },
 
 }
 
@@ -117,6 +125,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': 'F:/Django/Shuvro/drf_env/django_exercise',
+    }
+}
 
 LANGUAGE_CODE = 'en-us'
 

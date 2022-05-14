@@ -11,18 +11,23 @@ from authentication_app.models import User
 from authentication_app.serializers import UserSerializer, TokenSerializer
 
 
+# signout view
 class Signout(APIView):
+    # restrict user for authentication
     permission_classes = (IsAuthenticated,)
 
     def post(self, request, format=None):
+        # delete token when user logged out
         request.user.auth_token.delete()
         return Response(status=status.HTTP_200_OK)
 
 
+# user Register view
 class UserRegisterView(APIView):
 
     @transaction.atomic
     def post(self, request):
+        # recieving data from user
         email = request.data.get('email', None).lower()
         password = request.data.get('password', None)
         first_name = request.data.get('first_name')
@@ -34,8 +39,11 @@ class UserRegisterView(APIView):
             "first_name": first_name,
             "last_name": last_name,
         }
+        # pass data to the user serializer
         serializer = UserSerializer(data=data, context={'request': request})
+        # validation
         if serializer.is_valid():
+            # save user data
             serializer.save()
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -43,6 +51,7 @@ class UserRegisterView(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+# login view
 class ObtainAuthToken(ObtainAuthToken):
     serializer_class = TokenSerializer
     http_method_names = ['post']

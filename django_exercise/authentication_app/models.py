@@ -3,12 +3,14 @@ from django.contrib.auth.models import User as AuthUser
 from rest_framework.authtoken.models import Token
 from core.models import BaseModel
 
-
+# user model inherit BaseModel
 class User(AuthUser, BaseModel):
+    # make username field as email
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
     def as_json(self):
+        # create token
         token, created = Token.objects.get_or_create(user=self)
         return {
             "id": self.id,

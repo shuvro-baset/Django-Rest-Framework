@@ -2,18 +2,17 @@ from rest_framework import serializers
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from authentication_app.models import User
 
-
+# token serializer class
 class TokenSerializer(AuthTokenSerializer):
     pass
 
-
+# user Serializer
 class UserSerializer(serializers.ModelSerializer):
     email = serializers.SerializerMethodField()
 
     class Meta:
         model = User
-        fields = (
-            'id', 'email', 'username',)
+        fields = ( 'id', 'email', 'first_name', 'last_name')
 
         extra_kwargs = {'password': {'write_only': True}}
 

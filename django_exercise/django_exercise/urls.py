@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # including others app url
     path('api/', include('authentication_app.urls'), name='auth'),
     path('api/messages', include('message_app.urls'), name='message')
 ]

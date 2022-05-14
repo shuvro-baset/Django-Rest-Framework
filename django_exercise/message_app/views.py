@@ -5,10 +5,13 @@ from message_app.models import Message
 from message_app.serializers import MessageSerializer
 
 
+# create message view
 class MessageCreate(viewsets.ModelViewSet):
     queryset = Message.objects.all()
     permission_classes = (IsAuthenticated,)
     serializer_class = MessageSerializer
+    # add throttle for api request restriction
+    throttle_scope = 'message_app'
 
     def all_message_list(self, request):
         queryset = Message.objects.all()
