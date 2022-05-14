@@ -23,10 +23,10 @@ class User(AuthUser, BaseModel):
         return (self.first_name + ' ' + self.last_name).strip()
 
     @classmethod
-    def _create_user(cls, email=None, password=None, country_code=None, **extra_fields):
+    def _create_user(cls, email=None, password=None, **extra_fields):
         user = cls(username=email, **extra_fields)
         user.set_password(password)
-        user.is_active = False
+        user.is_active = True
         user.is_admin = False
         user.save()
         return user
